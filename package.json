@@ -1,0 +1,28 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "trillo app",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "npx sass ./sass/main.scss ./css/style.css -w",
+    "compile:sass": "npx sass ./sass/main.scss ./css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' ./css/style.comp.css -o ./css/style.prefix.css",
+    "compress:css": "npx sass --style compressed ./css/style.prefix.css ./css/style.css",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css",
+    "format": "npx prettier . --write",
+    "lint:css": "npx stylelint './**/*.{css,scss,sass}'"
+  },
+  "keywords": [],
+  "author": "Mustafa",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "concat": "^1.0.3",
+    "install": "^0.13.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^11.0.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-selector-bem-pattern": "^3.0.1"
+  }
+}
